@@ -1,13 +1,18 @@
 import json
+from pprint import pprint
 
 
 def load_data(filepath):
-    pass
+    with open(filepath) as f:
+        data = f.read()
+    f.closed
+    return json.loads(data)
 
 
 def pretty_print_json(data):
-    pass
+    pprint(data)
 
 
 if __name__ == '__main__':
-    pass
+    data = load_data('../json.json')
+    pretty_print_json(data)
